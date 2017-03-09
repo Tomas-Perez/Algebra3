@@ -11,7 +11,7 @@ def sum_recursive(n):
 
 
 def __aux_sum(current, n):
-    if n == 0:
+    if n <= 0:
         return current
     else:
         return __aux_sum(current + n, n-1)
@@ -30,7 +30,7 @@ def square_sum_recursive(n):
 
 
 def __aux_square_sum(current, n):
-    if n == 0:
+    if n <= 0:
         return current
     else:
         return __aux_square_sum(current + n**2, n-1)
@@ -49,7 +49,7 @@ def p_sum_recursive(p, n):
 
 
 def __aux_p_to_the_n(current, p, n):
-    if n == -1:
+    if n <= -1:
         return current
     else:
         return __aux_p_to_the_n(current + p**n, p, n-1)
@@ -68,7 +68,7 @@ def odd_num_sum_recursive(n):
 
 
 def __aux_odd_num_sum(current, n):
-    if n == 0:
+    if n <= 0:
         return current
     else:
         return __aux_odd_num_sum(current + 2*n - 1, n-1)
@@ -87,7 +87,7 @@ def n_times_n_plus_one_sum_recursive(n):
 
 
 def __aux_n_times_n_plus_one(current, n):
-    if n == 0:
+    if n <= 0:
         return current
     else:
         return __aux_n_times_n_plus_one(current + n * (n+1), n-1)
@@ -106,7 +106,7 @@ def cube_num_sum_recursive(n):
 
 
 def __aux_cube_sum(current, n):
-    if n == 0:
+    if n <= 0:
         return current
     else:
         return __aux_cube_sum(current + n**3, n-1)
