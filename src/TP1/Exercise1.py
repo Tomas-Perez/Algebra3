@@ -1,4 +1,10 @@
+
+"""
+calculates the sum of 1+ 2 + 3 + 4 + ... + n in iterative and recursive way
+"""
 # a
+
+
 def sum_iterative(n):
     result = 0
     for i in range(1, n+1):
@@ -18,6 +24,11 @@ def __aux_sum(current, n):
 
 
 # b
+"""
+calculates the sum of 1**2 + 2**2 + 3**2 + ... + n**2 in an iterative and recursive way
+"""
+
+
 def square_sum_iterative(n):
     result = 0
     for i in range(1, n+1):
@@ -37,6 +48,11 @@ def __aux_square_sum(current, n):
 
 
 # c
+"""
+calculates the sum of p**0 + p**1 + p**2 + ... + p**n in an iterative and recursive way
+"""
+
+
 def p_sum_iterative(p, n):
     result = 0
     for i in range(0, n+1):
@@ -56,6 +72,9 @@ def __aux_p_to_the_n(current, p, n):
 
 
 # d
+"""
+calculates the sum of p**0 + p**1 + p**2 + ... + p**n in an iterative and recursive way
+"""
 def odd_num_sum_iterative(n):
     result = 0
     for i in range(1, n+1):

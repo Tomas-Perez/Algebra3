@@ -1,4 +1,4 @@
-from TP1.Exercise6 import *
+from src.TP1.Exercise6 import *
 
 print("Is prime \n")
 

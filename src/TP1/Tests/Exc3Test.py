@@ -1,4 +1,4 @@
-from TP1.Exercise3 import *
+from src.TP1.Exercise3 import *
 
 print("Iterative")
 print(how_many_zeros_iterative(5000))

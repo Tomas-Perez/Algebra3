@@ -1,4 +1,4 @@
-from TP1.Exercise5 import *
+from src.TP1.Exercise5 import *
 
 
 print(contains_iterative(3, [1, 2, 3]))

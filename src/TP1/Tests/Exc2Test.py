@@ -1,4 +1,4 @@
-from TP1.Exercise2 import *
+from src.TP1.Exercise2 import *
 
 print(factorial_iterative(5), factorial_recursive(5))
 print(fibonacci_iterative(8), fibonacci_recursive(8))

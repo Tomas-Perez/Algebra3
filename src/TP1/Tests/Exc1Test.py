@@ -1,4 +1,4 @@
-from TP1.Exercise1 import *
+from src.TP1.Exercise1 import *
 
 print(sum_iterative(5), sum_recursive(5))
 print(square_sum_iterative(5), square_sum_recursive(5))
