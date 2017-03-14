@@ -1,4 +1,9 @@
 # a
+"""
+calculates the factorial of n in an iterative and recursive way
+"""
+
+
 def factorial_iterative(n):
     result = 1
     for i in range(1, n+1):
@@ -18,11 +23,21 @@ def __aux_factorial(current, n):
 
 
 # b
+"""
+calculates 2**n
+"""
+
+
 def two_to_the_n(n):
     return 2**n
 
 
 # c
+"""
+calculates the Nth term of the Fibonacci sequence in an iterative and recursive way
+"""
+
+
 def fibonacci_iterative(n):
     result = 0
     current_num = 0
@@ -33,6 +48,10 @@ def fibonacci_iterative(n):
         current_num = next_num
         next_num += temp
     return result
+
+"""
+calculates the Nth term of the Fibonacci sequence in an iterative and recursive way
+"""
 
 
 def fibonacci_recursive(n):
@@ -45,6 +64,11 @@ def fibonacci_recursive(n):
 
 
 # d
+"""
+calculates the greatest common divisor between two numbers in an iterative and recursive way
+"""
+
+
 def gcd_iterative(a, b):
     while b != 0:
         temp = b

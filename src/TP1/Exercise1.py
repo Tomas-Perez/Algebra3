@@ -1,6 +1,6 @@
 
 """
-calculates the sum of 1+ 2 + 3 + 4 + ... + n in iterative and recursive way
+calculates the sum of 1+ 2 + 3 + 4 + ... + n in an iterative and recursive way
 """
 # a
 
