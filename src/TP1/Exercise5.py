@@ -1,3 +1,8 @@
+"""
+    Takes an element and an array, returns true if the array contains the element, false if it doesn't.
+"""
+
+
 def contains_iterative(n, array):
     for i in range(0, len(array)):
         if array[i] == n:

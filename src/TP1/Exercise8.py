@@ -10,6 +10,6 @@ def horner_r(array, x):
 
 
 def horner_r_aux(array, x, i, s):
-    if(i == len(array)):
+    if i == len(array):
         return s
     return horner_r_aux(array, x, i + 1, s * x + array[i])

@@ -1,6 +1,11 @@
 from math import sqrt
 
 
+"""
+    Takes an integer returns true if its prime, false if it isn't
+"""
+
+
 # b1
 def is_prime_iterative(n):
     for i in range(int(sqrt(n)), 1, -1):
@@ -22,6 +27,11 @@ def __aux_is_prime(n, current):
         return __aux_is_prime(n, current+1)
 
 
+"""
+    Takes an integer and returns the next mayor or equal prime number
+"""
+
+
 # b2
 def next_prime_iterative(n):
     i = n
@@ -35,6 +45,11 @@ def next_prime_recursive(n):
         return next_prime_recursive(n + 1)
     else:
         return n
+
+
+"""
+    Takes an integer and returns the amount of unique prime factors it has
+"""
 
 
 # b3
@@ -58,6 +73,11 @@ def __aux_how_many_factors(n, current, count):
         return __aux_how_many_factors(n/current, current + 1, count + 1)
     else:
         return __aux_how_many_factors(n, current + 1, count)
+
+
+"""
+    Takes an integer and returns an array of all of its unique prime factors
+"""
 
 
 # b4
