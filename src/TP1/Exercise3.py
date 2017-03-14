@@ -7,8 +7,10 @@ def how_many_zeros_iterative(n):
         n = int(n)
     return num_of_zeros
 
+
 def how_many_zeros_recursive(n):
     return __aux_how_many_zeros(0, n)
+
 
 def __aux_how_many_zeros(count, n):
     if n <= 9:

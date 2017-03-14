@@ -73,8 +73,10 @@ def __aux_p_to_the_n(current, p, n):
 
 # d
 """
-calculates the sum of p**0 + p**1 + p**2 + ... + p**n in an iterative and recursive way
+calculates the sum of 1 + 3 + 5 + ... + 2n-1 in an iterative and recursive way
 """
+
+
 def odd_num_sum_iterative(n):
     result = 0
     for i in range(1, n+1):
@@ -94,6 +96,11 @@ def __aux_odd_num_sum(current, n):
 
 
 # e
+"""
+calculates the sum of 1**2 + 2**3 + 3**4 + ... + n*(n+1) in an iterative and recursive way
+"""
+
+
 def n_times_n_plus_one_sum_iterative(n):
     result = 0
     for i in range(1, n+1):
@@ -113,6 +120,11 @@ def __aux_n_times_n_plus_one(current, n):
 
 
 # f
+"""
+calculates the sum of 1**3 + 2**3 + 3**3 + ... + n**3 in an iterative and recursive way
+"""
+
+
 def cube_num_sum_iterative(n):
     result = 0
     for i in range(1, n+1):
