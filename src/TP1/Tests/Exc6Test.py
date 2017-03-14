@@ -1,0 +1,73 @@
+from TP1.Exercise6 import *
+
+print("Is prime \n")
+
+print("Iterative")
+print(1, is_prime_iterative(1))
+print(2, is_prime_iterative(2))
+print(3, is_prime_iterative(3))
+print(4, is_prime_iterative(4))
+print(5, is_prime_iterative(5))
+print(6, is_prime_iterative(6))
+print(7, is_prime_iterative(7))
+print(23, is_prime_iterative(23), "\n")
+
+print("Recursive")
+print(1, is_prime_recursive(1))
+print(2, is_prime_recursive(2))
+print(3, is_prime_recursive(3))
+print(4, is_prime_recursive(4))
+print(5, is_prime_recursive(5))
+print(6, is_prime_recursive(6))
+print(7, is_prime_recursive(7))
+print(23, is_prime_recursive(23), "\n")
+
+
+print("Next Prime \n")
+
+print(next_prime_iterative(26))
+print(next_prime_recursive(26), "\n")
+
+print("How many factors \n")
+print("Iterative")
+print(5, how_many_factors_iterative(5))
+print(4, how_many_factors_iterative(4))
+print(8, how_many_factors_iterative(8))
+print(9, how_many_factors_iterative(9))
+print(25, how_many_factors_iterative(25))
+print(26, how_many_factors_iterative(26))
+print(85, how_many_factors_iterative(85))
+print(12, how_many_factors_iterative(12), "\n")
+
+
+print("Recursive")
+print(5, how_many_factors_recursive(5))
+print(4, how_many_factors_recursive(4))
+print(8, how_many_factors_recursive(8))
+print(9, how_many_factors_recursive(9))
+print(25, how_many_factors_recursive(25))
+print(26, how_many_factors_recursive(26))
+print(85, how_many_factors_recursive(85))
+print(12, how_many_factors_recursive(12))
+
+
+print("Prime Factors \n")
+print("Iterative")
+print(5, prime_factors_iterative(5))
+print(4, prime_factors_iterative(4))
+print(8, prime_factors_iterative(8))
+print(9, prime_factors_iterative(9))
+print(25, prime_factors_iterative(25))
+print(26, prime_factors_iterative(26))
+print(85, prime_factors_iterative(85))
+print(12, prime_factors_iterative(12), "\n")
+
+print("Recursive")
+print(5, prime_factors_recursive(5))
+print(4, prime_factors_recursive(4))
+print(8, prime_factors_recursive(8))
+print(9, prime_factors_recursive(9))
+print(25, prime_factors_recursive(25))
+print(26, prime_factors_recursive(26))
+print(85, prime_factors_recursive(85))
+print(12, prime_factors_recursive(12), "\n")
