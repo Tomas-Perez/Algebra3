@@ -7,14 +7,14 @@ class Practice2:
         # Implement exercise 9
         return 
 
-	def exercise10(n):
+    def exercise10(n):
         # Implement exercise 10
         return 
 
-	def exercise11Sumation(n, x);
+    def exercise11Sumation(n, x):
         # Implement exercise 11 sumation
         return
 
-    def exercise11Formula(n, x);
+    def exercise11Formula(n, x):
         # Implement exercise 11 formula
         return 
