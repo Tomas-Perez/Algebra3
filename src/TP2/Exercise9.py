@@ -1,12 +1,21 @@
 """
-calculates the sum from m to n, of the sum from r to s, of j*k
+calculates the sum of j*k such that (m <= j <= n) and (r <= k <= s), using summation.
 """
 
 
-def sum9(m, n, r, s, j, k):
+def sum9(m, n, r, s):
     result = 0
-    for i in range(m, n+1):
-        for s in range(r, s+1):
+    for j in range(m, n+1):
+        for k in range(r, s+1):
             result += j*k
     return result
+
+"""
+calculates the sum of j*k such that (m <= j <= n) and (r <= k <= s), using the formula we cleared from the summation.
+"""
+
+
+def sum9_formula(m, n, r, s):
+    result = (n-m+1)*(s-r+1)*(s+r)*(n+m)
+    return result/4
 
