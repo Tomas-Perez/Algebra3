@@ -1,3 +1,8 @@
+"""
+    Receives an array and returns true if it's a palindrome, false if it isn't
+"""
+
+
 def is_palindrome_iterative(array):
     begin = 0
     end = len(array) - 1

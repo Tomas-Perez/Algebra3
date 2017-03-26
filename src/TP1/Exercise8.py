@@ -1,6 +1,7 @@
 """
     Takes an array of the following form [a0, a1, ... an] representing a polynomial
     and a number for 'x'. Returns the value of the polynomial when evaluated with that 'x'.
+    Using Horner's rule. Also prints the amount of operations.
 """
 
 
@@ -26,6 +27,13 @@ def horner_r_aux(array, x, i, s):
     return horner_r_aux(array, x, i + 1, s * x + array[i])
 
 
+"""
+    Takes an array of the following form [a0, a1, ... an] representing a polynomial
+    and a number for 'x'. Returns the value of the polynomial when evaluated with that 'x'.
+    Also prints the amount of operations.
+"""
+
+
 def evaluate_polynomial(array, x):
     # counts the number of multiplications and sums for comparison
     amount_of_operations = 0
@@ -36,3 +44,4 @@ def evaluate_polynomial(array, x):
         amount_of_operations += i + 2
     print("Amount of operations: ", amount_of_operations)
     return result
+

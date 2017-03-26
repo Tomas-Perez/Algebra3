@@ -102,3 +102,4 @@ def __aux_prime_factors(n, current, array):
         return __aux_prime_factors(n / current, current + 1, array)
     else:
         return __aux_prime_factors(n, current + 1, array)
+

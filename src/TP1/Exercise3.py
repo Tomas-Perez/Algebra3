@@ -1,3 +1,8 @@
+"""
+    Receives an integer and returns the amount of zeroes
+"""
+
+
 def how_many_zeros_iterative(n):
     num_of_zeros = 0
     while n > 9:
