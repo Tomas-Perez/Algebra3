@@ -32,6 +32,13 @@ def two_to_the_n(n):
     return 2**n
 
 
+def two_to_the_n_recursive(n):
+    if n == 0:
+        return 1
+    else:
+        return 2 * two_to_the_n_recursive(n - 1)
+
+
 # c
 """
 calculates the Nth term of the Fibonacci sequence in an iterative and recursive way
