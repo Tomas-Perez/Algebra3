@@ -1,14 +1,21 @@
 from src.TP6.Exercise1 import *
 
+def exc1_a_test():matrix1 = [[1,2],[2,1]]
 
-def exc1_a_test():
+matrix2 = [[-1, -2], [-2, -1]]
+
+#assert 2 == diag_sum(matrix1)def exc1_b_test():
     matrix1 = [[1, 2], [2, 1]]
-    assert 2 == diag_sum(matrix1)
+#assert 4 == secondary_diag_sum(matrix1)"""
+1c)
+"""
+assert ex1c(matrix1)[0] == 3
 
 
-def exc1_b_test():
-    matrix1 = [[1, 2], [2, 1]]
-    assert 4 == secondary_diag_sum(matrix1)
+"""
+1e)
+"""
+assert ex1e(matrix1, matrix2)[0][0] == 0
 
 
 def exc1_c_test():
