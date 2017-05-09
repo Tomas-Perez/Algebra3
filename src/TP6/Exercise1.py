@@ -29,3 +29,16 @@ def secondary_diag_sum(matrix):
         print("The matrix is not square")
     return result
 
+
+"""
+creates an array in which each element is the sum of every row of a rectangular matrix
+"""
+
+
+def ex1c(matrix):
+    result = []
+    for i in range(len(matrix[0])):
+        for j in range(len(matrix)):
+            result[i] += matrix[i][j]
+    return result
+
