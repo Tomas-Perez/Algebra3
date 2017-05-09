@@ -28,3 +28,16 @@ def secondary_diag_sum(matrix):
         result += matrix[matrix_size-i][i]
     return result
 
+
+"""
+creates an array in which each element is the sum of every row of a rectangular matrix
+"""
+
+
+def ex1c(matrix):
+    result = []
+    for i in range(len(matrix[0])):
+        for j in range(len(matrix)):
+            result[i] += matrix[i][j]
+    return result
+
