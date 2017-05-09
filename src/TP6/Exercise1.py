@@ -37,6 +37,7 @@ creates an array in which each element is the sum of every row of a rectangular 
 def ex1c(matrix):
     result = []
     for i in range(len(matrix[0])):
+        result.append(0)
         for j in range(len(matrix)):
             result[i] += matrix[i][j]
     return result
