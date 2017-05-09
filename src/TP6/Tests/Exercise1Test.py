@@ -1,6 +1,21 @@
 from src.TP6.Exercise1 import *
 
-matrix1 = [[1,2],[2,1]]
 
-assert 2 == diag_sum(matrix1)
-assert 4 == secondary_diag_sum(matrix1)
+def exc1_a_test():
+    matrix1 = [[1, 2], [2, 1]]
+    assert 2 == diag_sum(matrix1)
+
+
+def exc1_b_test():
+    matrix1 = [[1, 2], [2, 1]]
+    assert 4 == secondary_diag_sum(matrix1)
+
+
+def exc1_c_test():
+    matrix = [[1, 2], [3, 4], [5, 6]]
+    matrix_t = transpose_matrix(matrix)
+    assert matrix_t == [[1, 3, 5], [2, 4, 6]]
+
+exc1_a_test()
+exc1_b_test()
+exc1_c_test()

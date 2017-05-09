@@ -25,7 +25,7 @@ def secondary_diag_sum(matrix):
     matrix_size = len(matrix)
     result = 0
     for i in range(matrix_size):
-        result += matrix[matrix_size-i][i]
+        result += matrix[matrix_size-(i+1)][i]
     return result
 
 
@@ -41,3 +41,11 @@ def ex1c(matrix):
             result[i] += matrix[i][j]
     return result
 
+
+def transpose_matrix(matrix):
+    result = []
+    for m in range(len(matrix[0])):
+        result.append([])
+        for n in range(len(matrix)):
+            result[m].append(matrix[n][m])
+    return result
