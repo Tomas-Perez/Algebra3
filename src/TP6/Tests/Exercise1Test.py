@@ -16,3 +16,5 @@ assert ex1c(matrix1)[0] == 3
 1e)
 """
 assert ex1e(matrix1, matrix2)[0][0] == 0
+
+
