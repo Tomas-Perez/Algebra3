@@ -4,9 +4,9 @@ from src.TP6.Exercise2 import *
 test exercise 2
 """
 
-matrix1 = [[1, 2, 3], [3, 2, 1], [2, 1, 3]]
+matrix1 = [[1, 3, 2], [2, 2, 1], [3, 1, 3]]
 matrix2 = [[1, 1, 1], [1, 2, 1], [1, 1, 3]]
-dominant_matrix = [[6, -1, 1], [2, 8, 1], [1, 2, 6]]
+dominant_matrix = [[6, 2, 1], [-1, 8, 2], [1, 1, 6]]
 
 """
 2a)

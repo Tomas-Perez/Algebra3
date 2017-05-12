@@ -1,21 +1,20 @@
 from TP6.Exercise3 import *
 
-
 def exc3ai_test():
-    matrix = [[1, 0], [2, 4]]
+    matrix = [[1, 2], [0, 4]]
     vector = [1, 2]
     result = [5, 8]
     assert exc3ai(matrix, vector) == result
-    matrix = [[3, 0, 0], [5, 1, 0], [8, 3, 5]]
+    matrix = [[3, 5, 8], [0, 1, 3], [0, 0, 5]]
     vector = [9, 8, 1]
     result = [75, 11, 5]
     assert exc3ai(matrix, vector) == result
 
 
 def exc3aii_test():
-    matrix1 = [[1, 0], [2, 4]]
-    matrix2 = [[3, 0], [5, 6]]
-    result = [[4, 0], [7, 10]]
+    matrix1 = [[1, 2], [0, 4]]
+    matrix2 = [[3, 5], [0, 6]]
+    result = [[4, 7], [0, 10]]
     assert exc3aii(matrix1, matrix2) == result
 
     matrix1 = [[5, 0, 0], [8, 9, 0], [6, 3, 1]]
@@ -25,9 +24,9 @@ def exc3aii_test():
 
 
 def exc3aiii_test():
-    matrix1 = [[1, 0], [2, 4]]
-    matrix2 = [[3, 0], [5, 6]]
-    result = [[3, 0], [17, 24]]
+    matrix1 = [[1, 2], [0, 4]]
+    matrix2 = [[3, 5], [0, 6]]
+    result = [[3, 17], [0, 24]]
     assert exc3aiii(matrix1, matrix2) == result
 
 exc3ai_test()

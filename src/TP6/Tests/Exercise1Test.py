@@ -5,7 +5,7 @@ matrix2 = [[-1, -2], [-2, -1]]
 
 
 def exc1_a_test():
-    matrix1 = [[1,2],[2,1]]
+    matrix1 = [[1, 2], [2, 1]]
     matrix2 = [[-1, -2], [-2, -1]]
     assert 2 == diag_sum(matrix1)
 
