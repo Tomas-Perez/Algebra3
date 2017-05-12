@@ -65,7 +65,7 @@ Calculates the product of two matrix if possible
 """
 
 
-def matrix_product(matrixA,matrixB):
+def matrix_product(matrixA, matrixB):
     if(len(matrixA[0]) != len(matrixA)):
         print("Product not possible")
         return None
@@ -78,6 +78,7 @@ def matrix_product(matrixA,matrixB):
                 sum += matrixA[i][j] * matrixB[j][k]
             result[i].append(sum)
     return result
+
 
 def transpose_matrix(matrix):
     result = []
