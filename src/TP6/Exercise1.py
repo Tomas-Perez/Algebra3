@@ -58,6 +58,21 @@ def vector_matrix_product(matrix, vector):
         result.append(sum)
     return result
 
+"""
+1e)
+calculates the sum of two n*m matrices
+"""
+
+
+def matrix_sum(matrix1, matrix2):
+    result = []
+    for n in range(len(matrix1[0])):
+        result.append([])
+        for m in range(matrix1):
+            result[n][m] += matrix1[n][m] + matrix2[n][m]
+    return result
+
+
 
 """
 1f)

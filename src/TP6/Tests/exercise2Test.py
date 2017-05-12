@@ -20,6 +20,3 @@ assert not is_symmetrical(matrix1)
 """
 assert is_dominant(dominant_matrix)
 assert not is_dominant(matrix1)
-
-
-
