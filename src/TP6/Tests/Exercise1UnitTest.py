@@ -7,6 +7,14 @@ class TestEx1(unittest.TestCase):
     exc1 = Exercise1()
     calc = Calculator()
 
+    def test_ex1a(self):
+        matrix1 = [[1, 2], [2, 1]]
+        self.assertEqual(2, self.exc1.exerciseA(matrix1, self.calc))
+
+    def test_ex1b(self):
+        matrix1 = [[1, 2], [2, 1]]
+        self.assertEqual(4, self.exc1.exerciseB(matrix1, self.calc))
+
     def test_ex1c(self):
         matrix1 = [[1, 3, 2],
                    [5, 2, 1],
