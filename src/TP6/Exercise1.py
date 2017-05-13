@@ -49,15 +49,18 @@ class Exercise1:
         return result
 
     """
-    Calculates the sum between two n*m matrices
+    Calculates the sum between two n*m matrices if possible
     """
     def exerciseE(self, matrixA, matrixB, calculator):
+        if len(matrixA[0]) != len(matrixB[0]) or len(matrixA) != len(matrixB):
+            print("sum not possible")
+            return None
         result = []
         for n in range(len(matrixA[0])):
             result.append([])
-            for m in range(len(matrixB)):
-                sum = 0
-                result[n][m] = calculator.sum(matrixA[n][m], matrixB[n][m])
+            for m in range(len(matrixB[0])):
+                sum = calculator.sum(matrixA[n][m], matrixB[n][m])
+                result[n].append(sum)
         return result
 
     """

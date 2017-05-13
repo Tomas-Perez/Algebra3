@@ -29,9 +29,7 @@ class TestEx1(unittest.TestCase):
         matrix23 = [[-7, 0, 4],
                     [0, 9, 5],
                     [4, 5, 12]]
-
-        self.assertEqual(matrix23[0][0], self.exc1.exerciseE(matrix2, matrix3, self.calc))
-        # self.assertEqual(matrix23, self.exc1.exerciseE(matrix2, matrix3, self.calc))
+        self.assertEqual(matrix23, self.exc1.exerciseE(matrix2, matrix3, self.calc))
 
 if __name__ == '__main__':
     unittest.main()
