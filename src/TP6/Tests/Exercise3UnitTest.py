@@ -1,6 +1,6 @@
 import unittest
-from TP6.Exercise3 import *
-from TP6.Calculator import *
+from src.TP6.Exercise3 import *
+from src.TP6.Calculator import *
 
 
 class TestEx3(unittest.TestCase):
