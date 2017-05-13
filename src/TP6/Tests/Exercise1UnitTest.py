@@ -16,6 +16,7 @@ class TestEx1(unittest.TestCase):
                    [3, 4, 9]]
         self.assertEqual(6, self.exc1.exerciseC(matrix1, self.calc)[0])
         self.assertEqual(8, self.exc1.exerciseC(matrix1, self.calc)[1])
+        self.assertEqual(7, self.exc1.exerciseC(matrix1, self.calc)[2])
         self.assertEqual(-6, self.exc1.exerciseC(matrix3, self.calc)[0])
 
     def test_ex1e(self):
@@ -29,7 +30,7 @@ class TestEx1(unittest.TestCase):
                     [0, 9, 5],
                     [4, 5, 12]]
 
-        self.assertEqual(matrix23[0][0],self.exc1.exerciseE(matrix2, matrix3, self.calc))
+        self.assertEqual(matrix23[0][0], self.exc1.exerciseE(matrix2, matrix3, self.calc))
         # self.assertEqual(matrix23, self.exc1.exerciseE(matrix2, matrix3, self.calc))
 
 if __name__ == '__main__':

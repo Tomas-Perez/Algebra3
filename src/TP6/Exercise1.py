@@ -28,9 +28,12 @@ class Exercise1:
     """
     def exerciseC(self, matrix, calculator):
         result = []
+        row_result = 0
         for i in range(len(matrix[0])):
             for j in range(len(matrix)):
-                result[i] = calculator.sum(result[i], matrix[i][j])
+                row_result = calculator.sum(row_result, matrix[i][j])
+            result.append(row_result)
+            row_result = 0
         return result
 
     """
@@ -52,7 +55,8 @@ class Exercise1:
         result = []
         for n in range(len(matrixA[0])):
             result.append([])
-            for m in range(matrixB):
+            for m in range(len(matrixB)):
+                sum = 0
                 result[n][m] = calculator.sum(matrixA[n][m], matrixB[n][m])
         return result
 
