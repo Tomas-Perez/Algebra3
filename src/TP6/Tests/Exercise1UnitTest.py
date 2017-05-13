@@ -1,38 +1,36 @@
 import unittest
+from src.TP6.Calculator import Calculator
+from src.TP6.Exercise1 import Exercise1
 
-from TP6.Calculator import Calculator
-from TP6.Exercise2 import Exercise2
 
-
-class TestEx2(unittest.TestCase):
-    exc2 = Exercise2()
+class TestEx1(unittest.TestCase):
+    exc1 = Exercise1()
     calc = Calculator()
 
-    def test_ex2a(self, exc2=Exercise2(), calc=Calculator()):
-        matrix1 = [[1, 3, 2],  # not symmetrical
+    def test_ex1c(self):
+        matrix1 = [[1, 3, 2],
                    [5, 2, 1],
                    [3, 1, 3]]
-        matrix2 = [[1, 1, 1],  # symmetrical
-                   [1, 2, 1],
-                   [1, 1, 3]]
-        matrix3 = [[-8, -1, 3],  # symmetrical
+        matrix3 = [[-8, -1, 3],
                    [-1, 7, 4],
                    [3, 4, 9]]
+        self.assertEqual(6, self.exc1.exerciseC(matrix1, self.calc)[0])
+        self.assertEqual(8, self.exc1.exerciseC(matrix1, self.calc)[1])
+        self.assertEqual(-6, self.exc1.exerciseC(matrix3, self.calc)[0])
 
-        self.assertTrue(self, exc2.exerciseA(matrix2, calc))
-        self.assertTrue(self, not exc2.exerciseA(matrix1, calc))
-        self.assertTrue(self, exc2.exerciseA(matrix3, calc))
+    def test_ex1e(self):
+        matrix2 = [[1, 1, 1],
+                   [1, 2, 1],
+                   [1, 1, 3]]
+        matrix3 = [[-8, -1, 3],
+                   [-1, 7, 4],
+                   [3, 4, 9]]
+        matrix23 = [[-7, 0, 4],
+                    [0, 9, 5],
+                    [4, 5, 12]]
 
-    def test_ex2b(self, exc2=Exercise2(), calc=Calculator()):
-        dominant_matrix = [[6, 2, 1],
-                           [-1, 8, 2],
-                           [1, 1, 6]]
-        matrix1 = [[1, 3, 2],  # not dominant
-                   [2, 2, 1],
-                   [3, 1, 3]]
-
-        self.assertTrue(self, exc2.exerciseB(dominant_matrix, calc))
-        self.assertTrue(self, not exc2.exerciseB(matrix1, calc))
+        self.assertEqual(matrix23[0][0],self.exc1.exerciseE(matrix2, matrix3, self.calc))
+        # self.assertEqual(matrix23, self.exc1.exerciseE(matrix2, matrix3, self.calc))
 
 if __name__ == '__main__':
     unittest.main()

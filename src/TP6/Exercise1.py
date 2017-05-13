@@ -30,7 +30,7 @@ class Exercise1:
         result = []
         for i in range(len(matrix[0])):
             for j in range(len(matrix)):
-                result[i] += matrix[i][j]
+                result[i] = calculator.sum(result[i], matrix[i][j])
         return result
 
     """
@@ -53,7 +53,7 @@ class Exercise1:
         for n in range(len(matrixA[0])):
             result.append([])
             for m in range(matrixB):
-                result[n][m] += matrixA[n][m] + matrixB[n][m]
+                result[n][m] = calculator.sum(result[n][m], calculator.sum(matrixA[n][m], matrixB[n][m]))
         return result
 
     """
@@ -88,6 +88,7 @@ class Exercise1:
 # TODO Fix you shit @manu @ariel
 
 """
+1a)
 Calculates the sum of the diagonal of a square matrix
 """
 
@@ -101,6 +102,7 @@ def diag_sum(matrix):
 
 
 """
+1b)
 Calculates the sum of the diagonal of a square matrix
 """
 
@@ -114,6 +116,7 @@ def secondary_diag_sum(matrix):
 
 
 """
+1c)
 creates an array in which each element is the sum of every row of a rectangular matrix
 """
 
