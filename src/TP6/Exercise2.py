@@ -24,7 +24,7 @@ class Exercise2:
         for i in range(len(matrix[0])):
             for j in range(len(matrix)):
                 if j != i:
-                    comparator += matrix[i][j] ** 2
+                    comparator = calculator.sum(comparator, calculator.multiplication(matrix[i][j], matrix[i][j]))
             if matrix[i][i] < sqrt(comparator):
                 return False
         return True
