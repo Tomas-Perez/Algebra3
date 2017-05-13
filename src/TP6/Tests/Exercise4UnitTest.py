@@ -1,7 +1,6 @@
 import unittest
-from src.TP6.Exercise4 import *
-from src.TP6.Calculator import Calculator
-from src.TP6.Node import Node
+from TP6.Exercise4 import *
+from TP6.Calculator import Calculator
 
 
 class TestEx4(unittest.TestCase):
@@ -18,8 +17,8 @@ class TestEx4(unittest.TestCase):
 
     def test_summation(self):
         matrix1 = [[1, 2, 3],
-                  [0, 4, 5],
-                  [0, 0, 6]]
+                   [0, 4, 5],
+                   [0, 0, 6]]
         matrix2 = [[4, 0, 8],
                    [0, 6, 1],
                    [0, 0, 7]]
@@ -34,6 +33,3 @@ class TestEx4(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
-
-
