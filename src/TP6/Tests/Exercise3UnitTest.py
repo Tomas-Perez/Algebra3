@@ -65,6 +65,47 @@ class TestEx3(unittest.TestCase):
                   [0, 36]]
         self.assertEqual(self.exc3.exerciseAIII(matrix1, matrix2, self.calc), result)
 
+    def test_exc3Dii(self):
+        matrix1 = [[1, 4, 0],
+                   [2, 5, 8],
+                   [0, 6, 9]]
+        matrix2 = [[2, 8, 2],
+                   [3, 2, 7],
+                   [1, 6, 4]]
+        result = [[3, 12, 2],
+                  [5, 7, 15],
+                  [1, 12, 13]]
+        self.assertEqual(self.exc3.exerciseDII(matrix1, matrix2, 1, 1, self.calc), result)
+
+
+    def test_exc3Diii(self):
+        matrix1 = [[1, 4, 0],
+                   [2, 5, 8],
+                   [0, 6, 9]]
+        matrix2 = [[2, 3],
+                   [8, 2],
+                   [2, 7]]
+        result = [[34, 11],
+                  [60, 72],
+                  [66, 75]]
+        self.assertEqual(self.exc3.exerciseDIII(matrix1, matrix2, 1, 1, self.calc), result)
+
+        matrix1 = [[3, 0, 0, 0],
+                   [4, 5, 0, 0],
+                   [8, 9, 7, 0],
+                   [0, 3, 4, 8]]
+
+        matrix2 = [[1, 5],
+                   [7, 5],
+                   [4, 12],
+                   [4, 6]]
+
+        result = [[3, 15],
+                  [39, 45],
+                  [99, 169],
+                  [69, 111]]
+        self.assertEqual(self.exc3.exerciseDIII(matrix1, matrix2, 2, 0, self.calc), result)
+
+
 if __name__ == '__main__':
     unittest.main()
-

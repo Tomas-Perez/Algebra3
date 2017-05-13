@@ -7,7 +7,7 @@ class Calculator:
     def subtraction(self, a, b):
         return a - b
 
-    # The equivalent for multiplication(5,10) is 5*10=-50;
+    # The equivalent for multiplication(5,10) is 5*10=50;
     def multiplication(self, a, b):
         return a * b
 

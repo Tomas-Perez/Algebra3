@@ -34,26 +34,26 @@ class Exercise1:
         return result
 
     """
-    Calculates the product of a matrix A size n*m and a vector b size m
+    Calculates the product between a matrix A size n*m and a vector b size m
     """
     def exerciseD(self, matrix, vector, calculator):
         result = []
         for i in range(len(matrix[0])):
             sum = 0
             for j in range(len(matrix)):
-                sum += matrix[j][i] * vector[j]
+                sum += calculator.multiplication(matrix[i][j],vector[j])
             result.append(sum)
         return result
 
     """
-    Calculates the sum of two n*m matrices
+    Calculates the sum between two n*m matrices
     """
     def exerciseE(self, matrixA, matrixB, calculator):
         result = []
         for n in range(len(matrixA[0])):
             result.append([])
             for m in range(matrixB):
-                result[n][m] = calculator.sum(result[n][m], calculator.sum(matrixA[n][m], matrixB[n][m]))
+                result[n][m] = calculator.sum(matrixA[n][m], matrixB[n][m])
         return result
 
     """
@@ -69,7 +69,7 @@ class Exercise1:
             for k in range(len(matrixB[0])):
                 sum = 0
                 for j in range(len(matrixA)):
-                    sum += matrixA[i][j] * matrixB[j][k]
+                    sum += calculator.multiplication(matrixA[i][j], matrixB[j][k])
                 result[i].append(sum)
         return result
 
@@ -85,7 +85,7 @@ class Exercise1:
         return result
 
 
-# TODO Fix you shit @manu @ariel
+# TODO Fix you shit @ariel
 
 """
 1a)
@@ -126,58 +126,6 @@ def ex1c(matrix):
     for i in range(len(matrix[0])):
         for j in range(len(matrix)):
             result[i] += matrix[i][j]
-    return result
-
-
-"""
-1d)
-Calculates the product of a matrix A size n*m and a vector b size m
-"""
-
-
-def vector_matrix_product(matrix, vector):
-    result = []
-    for i in range(len(matrix[0])):
-        sum = 0
-        for j in range(len(matrix)):
-            sum += matrix[j][i] * vector[j]
-        result.append(sum)
-    return result
-
-"""
-1e)
-calculates the sum of two n*m matrices
-"""
-
-
-def matrix_sum(matrix1, matrix2):
-    result = []
-    for n in range(len(matrix1[0])):
-        result.append([])
-        for m in range(matrix1):
-            result[n][m] += matrix1[n][m] + matrix2[n][m]
-    return result
-
-
-
-"""
-1f)
-Calculates the product of two matrix if possible
-"""
-
-
-def matrix_product(matrixA, matrixB):
-    if(len(matrixA[0]) != len(matrixA)):
-        print("Product not possible")
-        return None
-    result = []
-    for i in range(len(matrixA[0])):
-        result.append([])
-        for k in range(len(matrixB[0])):
-            sum = 0
-            for j in range(len(matrixA)):
-                sum += matrixA[i][j] * matrixB[j][k]
-            result[i].append(sum)
     return result
 
 

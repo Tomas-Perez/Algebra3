@@ -74,19 +74,45 @@ class Exercise3:
         return
 
     # Returns double[][]; matrixA is of type double[][]; vectorX is of type double[]; calculator is of type Calculator
-    def exerciseDI(matrixA, vectorX, calculator):
-        # Implement
-        return
+    '''
+    Calculates the product between a vector size n and a band n*n matrix 
+    '''
+    def exerciseDI(self, matrixA, vectorX, k1, k2, calculator):
+        result =[]
+        for i in range(len(matrixA[0])):
+            sum = 0
+            r = (j for j in range(i-k1, i+k2) if 0 <= j < len(matrixA))
+            for j in range(r):
+                sum += calculator.multiplication(matrixA[i][j], vectorX[j])
+            result[i] = sum
+        return result
 
     # Returns double[][]; matrixA is of type double[][]; matrixB is of type double[][]; calculator is of type Calculator
-    def exerciseDII(matrixA, matrixB, calculator):
-        # Implement
-        return
+    '''
+    Calculates the sum between a band n*n matrix and another matrix
+    '''
+    def exerciseDII(self, matrixA, matrixB, k1, k2, calculator):
+        length = len(matrixA)
+        result = [[0] * length for _ in range(length)]
+        for i in range(len(matrixA[0])):
+            for j in range(len(matrixA)):
+                if i+k2 >= j >= i-k1:
+                    result[i][j] = calculator.sum(matrixA[i][j], matrixB[i][j])
+                else:
+                    result[i][j] = matrixB[i][j]
+        return result
 
     # Returns double[][]; matrixA is of type double[][]; matrixB is of type double[][]; calculator is of type Calculator
-    def exerciseDIII(matrixA, matrixB, calculator):
-        # Implement
-        return
+    def exerciseDIII(self, matrixA, matrixB, k1, k2, calculator):
+        result = [[0] * len(matrixB[0]) for _ in range(len(matrixA))]
+        for i in range(len(matrixA[0])):
+            for k in range(len(matrixB[0])):
+                sum = 0
+                r = (j for j in range(i-k1, i+k2+1) if 0 <= j < len(matrixA))
+                for j in r:
+                    sum += calculator.multiplication(matrixA[i][j], matrixB[j][k])
+                result[i][k] = sum
+        return result
 
     # Returns double[][]; matrixA is of type double[][]; matrixB is of type double[][]; calculator is of type Calculator
     def exerciseE(matrixA, matrixB, calculator):
