@@ -32,6 +32,7 @@ class TestEx2(unittest.TestCase):
 
         self.assertFalse(self.exc2.exerciseB(matrix1, self.calc))
         self.assertTrue(self.exc2.exerciseB(dominant_matrix, self.calc))
+        self.assertTrue(not self.exc2.exerciseB(matrix1, self.calc))
 
 if __name__ == '__main__':
     unittest.main()
