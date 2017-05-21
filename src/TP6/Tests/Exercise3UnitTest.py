@@ -77,7 +77,6 @@ class TestEx3(unittest.TestCase):
                   [1, 12, 13]]
         self.assertEqual(self.exc3.exerciseDII(matrix1, matrix2, 1, 1, self.calc), result)
 
-
     def test_exc3Diii(self):
         matrix1 = [[1, 4, 0],
                    [2, 5, 8],
@@ -105,6 +104,72 @@ class TestEx3(unittest.TestCase):
                   [99, 169],
                   [69, 111]]
         self.assertEqual(self.exc3.exerciseDIII(matrix1, matrix2, 2, 0, self.calc), result)
+
+    def test_exc3E(self):
+        matrix1 = [[5, 0, 0],
+                   [3, 9, 0],
+                   [1, 5, 1]]
+        matrix2 = [[1, 1, 2],
+                   [0, 7, 6],
+                   [0, 0, 4]]
+        result = [[5, 5, 10],
+                  [3, 66, 60],
+                  [1, 36, 36]]
+        self.assertEqual(self.exc3.exerciseE(matrix1, matrix2, self.calc), result)
+
+    def test_exc3ci(self):
+        matrix = [[5, 4, 0],
+                  [3, 9, 7],
+                  [0, 5, 1]]
+        vector = [1, 2, 3]
+        result = [13, 42, 13]
+        self.assertEqual(self.exc3.exerciseCI(matrix, vector, self.calc), result)
+
+        matrix = [[5, 4, 0, 0],
+                  [3, 9, 7, 0],
+                  [0, 5, 1, 6],
+                  [0, 0, 6, 9]]
+        vector = [1, 2, 3, 4]
+        result = [13, 42, 37, 54]
+        self.assertEqual(self.exc3.exerciseCI(matrix, vector, self.calc), result)
+
+    def test_exc3cii(self):
+        matrix1 = [[5, 4, 0],
+                   [3, 9, 7],
+                   [0, 5, 1]]
+        matrix2 = [[5, 4, 0],
+                   [3, 9, 7],
+                   [0, 5, 1]]
+        result = [[10, 8, 0],
+                  [6, 18, 14],
+                  [0, 10, 2]]
+        self.assertEqual(self.exc3.exerciseCII(matrix1, matrix2, self.calc), result)
+
+        matrix1 = [[5, 4, 0, 0],
+                   [3, 9, 7, 0],
+                   [0, 5, 1, 6],
+                   [0, 0, 6, 9]]
+        matrix2 = [[5, 4, 0, 0],
+                   [3, 9, 7, 0],
+                   [0, 5, 1, 6],
+                   [0, 0, 6, 9]]
+        result = [[10, 8, 0, 0],
+                  [6, 18, 14, 0],
+                  [0, 10, 2, 12],
+                  [0, 0, 12, 18]]
+        self.assertEqual(self.exc3.exerciseCII(matrix1, matrix2, self.calc), result)
+
+    def test_exc3ciii(self):
+        matrix1 = [[5, 4, 0],
+                   [3, 9, 7],
+                   [0, 5, 1]]
+        matrix2 = [[7, 4, 0],
+                   [3, 2, 47],
+                   [0, 5, 10]]
+        result = [[47, 28, 188],
+                  [48, 65, 493],
+                  [15, 15, 245]]
+        self.assertEqual(self.exc3.exerciseCIII(matrix1, matrix2, self.calc), result)
 
 
 if __name__ == '__main__':

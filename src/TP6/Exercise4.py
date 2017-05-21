@@ -15,7 +15,7 @@ class Exercise4:
         return result
 
     """
-    Takes a superior triangular matrix and returns it as a linear list of nodes
+    Takes a superior triangular matrix and returns it as an array
     """
     def matrix_to_array(self, matrix):
         result = []
