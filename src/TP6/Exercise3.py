@@ -44,9 +44,21 @@ class Exercise3:
         return result
 
     # Returns double[][]; matrixA is of type double[][]; vectorX is of type double[]; calculator is of type Calculator
+    # k1=length-1    k2=1
+    """
+    Calculates the product between a vector size n and a superior Hessenberg n*n matrix 
+    """
     def exerciseBI(self, matrixA, vectorX, calculator):
-        # Implement
-        return
+        length = len(matrixA)
+        result = []
+        result = [[0] * length for _ in range(length)]
+        for i in range(length):
+            sum = 0
+            r = (j for j in range(i - (length-1), i + 1) if 0 <= j < length)
+            for j in r:
+                sum = calculator.sum(sum, calculator.multiplication(matrixA[i][j], vectorX[j]))
+            result[i] = sum
+        return result
 
     # Returns double[][]; matrixA is of type double[][]; matrixB is of type double[][]; calculator is of type Calculator
     def exerciseBII(self, matrixA, matrixB, calculator):
