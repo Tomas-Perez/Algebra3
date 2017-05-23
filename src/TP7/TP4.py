@@ -18,8 +18,16 @@ class TP4:
 
     # Returns double[]. coefficients is of type double[][]. independentTerms is of type double[].
     def exercise2(self, coefficients, independent_terms):
-        # Implement algorithm
-        return 
+        length = len(coefficients)
+        n = length - 1
+        result = [0] * length
+        result[0] = independent_terms[0]/coefficients[0][0]
+        for i in range(1, length):
+            product = 0
+            for j in range(0, i):
+                product += coefficients[i][j] * result[j]
+            result[i] += (independent_terms[i] - product)/coefficients[i][i]
+        return result
 
     # Returns double[]
     def exercise5WithoutPivoteo(self, coefficients, independent_terms):
