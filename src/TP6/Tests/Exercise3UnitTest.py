@@ -65,6 +65,7 @@ class TestEx3(unittest.TestCase):
                   [0, 36]]
         self.assertEqual(self.exc3.exerciseAIII(matrix1, matrix2, self.calc), result)
 
+    # tests 3b)
     def test_exc3Bi(self):
         matrix = [[5, 4, 0],
                   [3, 9, 7],
@@ -73,13 +74,14 @@ class TestEx3(unittest.TestCase):
         result = [13, 42, 13]
         self.assertEqual(self.exc3.exerciseBI(matrix, vector, self.calc), result)
 
-        matrix = [[5, 4, 0, 0],
-                  [3, 9, 7, 0],
+        matrix = [[5, 4, 3, 2],
+                  [3, 9, 7, 1],
                   [0, 5, 1, 6],
                   [0, 0, 6, 9]]
         vector = [1, 2, 3, 4]
-        result = [13, 42, 37, 54]
-        self.assertEqual(self.exc3.exerciseBI(matrix, vector, self.calc), result)
+        result = [30, 46, 37, 54]
+        exc_result = self.exc3.exerciseBI(matrix, vector, self.calc)
+        self.assertEqual(exc_result, result)
 
     def test_exc3Bii(self):
         matrix1 = [[1, 4, 0],

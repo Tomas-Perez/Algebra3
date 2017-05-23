@@ -44,7 +44,7 @@ class Exercise3:
         return result
 
     # Returns double[][]; matrixA is of type double[][]; vectorX is of type double[]; calculator is of type Calculator
-    # k1=length-1    k2=1
+    # k2=length-1    k1=1
     """
     Calculates the product between a vector size n and a superior Hessenberg n*n matrix 
     """
@@ -54,7 +54,7 @@ class Exercise3:
         result = [[0] * length for _ in range(length)]
         for i in range(length):
             sum = 0
-            r = (j for j in range(i - (length-1), i + 1) if 0 <= j < length)
+            r = (j for j in range(i - 1, i + length) if 0 <= j < length)
             for j in r:
                 sum = calculator.sum(sum, calculator.multiplication(matrixA[i][j], vectorX[j]))
             result[i] = sum
@@ -69,7 +69,7 @@ class Exercise3:
         result = [[0] * length for _ in range(length)]
         for i in range(len(matrixA[0])):
             for j in range(len(matrixA)):
-                if i + 1 >= j >= i - (length-1):
+                if i + 1 >= j >= i - length:
                     result[i][j] = calculator.sum(matrixA[i][j], matrixB[i][j])
                 else:
                     result[i][j] = matrixB[i][j]
@@ -84,7 +84,7 @@ class Exercise3:
         for i in range(len(matrixA[0])):
             for k in range(len(matrixB[0])):
                 sum = 0
-                r = (j for j in range(i - (len(matrixA)-1), i + 1 + 1) if 0 <= j < len(matrixA))
+                r = (j for j in range(i - (len(matrixA)), i + 1 + 1) if 0 <= j < len(matrixA))
                 for j in r:
                     sum = calculator.sum(sum, calculator.multiplication(matrixA[i][j], matrixB[j][k]))
                 result[i][k] = sum
