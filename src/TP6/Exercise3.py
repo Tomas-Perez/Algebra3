@@ -44,19 +44,51 @@ class Exercise3:
         return result
 
     # Returns double[][]; matrixA is of type double[][]; vectorX is of type double[]; calculator is of type Calculator
+    # k1=length-1    k2=1
+    """
+    Calculates the product between a vector size n and a superior Hessenberg n*n matrix 
+    """
     def exerciseBI(self, matrixA, vectorX, calculator):
-        # Implement
-        return
+        length = len(matrixA)
+        result = []
+        result = [[0] * length for _ in range(length)]
+        for i in range(length):
+            sum = 0
+            r = (j for j in range(i - (length-1), i + 1) if 0 <= j < length)
+            for j in r:
+                sum = calculator.sum(sum, calculator.multiplication(matrixA[i][j], vectorX[j]))
+            result[i] = sum
+        return result
 
     # Returns double[][]; matrixA is of type double[][]; matrixB is of type double[][]; calculator is of type Calculator
+    """
+    Calculates the sum between a Hessenberg n*n matrix and another matrix
+    """
     def exerciseBII(self, matrixA, matrixB, calculator):
-        # Implement
-        return
+        length = len(matrixA)
+        result = [[0] * length for _ in range(length)]
+        for i in range(len(matrixA[0])):
+            for j in range(len(matrixA)):
+                if i + 1 >= j >= i - (length-1):
+                    result[i][j] = calculator.sum(matrixA[i][j], matrixB[i][j])
+                else:
+                    result[i][j] = matrixB[i][j]
+        return result
 
     # Returns double[][]; matrixA is of type double[][]; matrixB is of type double[][]; calculator is of type Calculator
+    """
+    Calculates the product between two Hessenberg matrices
+    """
     def exerciseBIII(self, matrixA, matrixB, calculator):
-        # Implement
-        return
+        result = [[0] * len(matrixB[0]) for _ in range(len(matrixA))]
+        for i in range(len(matrixA[0])):
+            for k in range(len(matrixB[0])):
+                sum = 0
+                r = (j for j in range(i - (len(matrixA)-1), i + 1 + 1) if 0 <= j < len(matrixA))
+                for j in r:
+                    sum = calculator.sum(sum, calculator.multiplication(matrixA[i][j], matrixB[j][k]))
+                result[i][k] = sum
+        return result
 
     """
     Calculates the product between a tridiagonal matrix and a vector
