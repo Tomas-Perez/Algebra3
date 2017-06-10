@@ -124,6 +124,23 @@ class TestEx3(unittest.TestCase):
         self.assertEqual(self.exc3.exerciseBIII(matrix1, matrix2, self.calc), result)
 
     def test_exc3Dii(self):
+        matrix1 = [[3, 0, 0, 0],
+                   [4, 5, 0, 0],
+                   [8, 9, 7, 0],
+                   [0, 3, 4, 8]]
+
+        vector =  [[1],
+                   [7],
+                   [4],
+                   [4]]
+
+        result = [[1],
+                  [36],
+                  [99],
+                  [69]]
+        self.assertEqual(self.exc3.exerciseDI(matrix1, vector, 2, 0, self.calc), result)
+
+    def test_exc3Dii(self):
         matrix1 = [[1, 4, 0],
                    [2, 5, 8],
                    [0, 6, 9]]

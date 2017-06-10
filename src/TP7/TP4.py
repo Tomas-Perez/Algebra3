@@ -155,6 +155,11 @@ class TP4:
 
     # Returns double[][]. coefficients is of type double[][].
     def exercise8(self, coefficients):
+        """
+        Calculates the inverse matrix of the received matrix using the Gauss-Jordan algorithm
+        :param coefficients: nxm matrix
+        :return: nxm matrix that is the calculated inverse
+        """
         length = len(coefficients[0])
         for i in range(length):
             for j in range(length):
