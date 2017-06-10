@@ -177,6 +177,7 @@ class Exercise3:
                 result[i][k] = sum
         return result
 
+
     """
     Calculates the product between an inferior triangular matrix and a superior triangular matrix.
     """

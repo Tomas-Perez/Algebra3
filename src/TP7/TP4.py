@@ -57,31 +57,101 @@ class TP4:
             b[row], b[max_index] = b[max_index], b[row]
 
 
-    # Returns double[]
+
     def exercise5WithoutPivoteo(self, coefficients, independent_terms):
+        """
+        Takes an equation system formed by a nxm coefficient matrix and an mx1 vector with independent terms. 
+        Returns its result using the gauss algorithm.
+        :param coefficients: nxm matrix
+        :param independent_terms: mx1 vector
+        :return: mx1 X vector
+        """
         a = copy.deepcopy(coefficients)
         b = copy.deepcopy(independent_terms)
-        n = len(coefficients)
         self.gauss_system(a, b)
         return self.exercise1(a, b)
 
 
-    # Returns double[]. coefficients is of type double[][]. independentTerms is of type double[].
     def exercise5PartialPivoteo(self, coefficients, independent_terms):
+        """
+        Takes an equation system formed by a nxm coefficient matrix and an mx1 vector with independent terms. 
+        Returns its result using the gauss algorithm and partial pivot.
+        :param coefficients: nxm matrix
+        :param independent_terms: mx1 vector
+        :return: mx1 X vector
+        """
         a = copy.deepcopy(coefficients)
         b = copy.deepcopy(independent_terms)
-        n = len(coefficients)
-        self.gauss_system(a, b, self.partial_pivot())
+        self.gauss_system(a, b, self.partial_pivot)
         return self.exercise1(a, b)
 
-    # Returns double[]. coefficients is of type double[][]. independentTerms is of type double[].
+    def gauss_upper_hessenberg(self, a, b, calculator):
+        n = len(a)
+        for k in range(n):
+            div = a[k][k]
+            for j in range(k, n):
+                a[k][j] = calculator.division(a[k][j], div)
+            b[k] = calculator.division(b[k], div)
+            if k is not n-1:
+                i = k+1
+                mult = a[i][k]
+                for j in range(k, n):
+                    a[i][j] = calculator.subtraction(a[i][j], calculator.multiplication(mult, a[k][j]))
+                b[i] = calculator.subtraction(b[i], calculator.multiplication(mult, b[k]))
+
     def exercise6(self, coefficients, independent_terms, calculator):
-        # Implement algorithm
-        return 
+        """
+        Takes an equation system formed by a nxm upper hessenberg coefficient matrix and an mx1 vector 
+        with independent terms. Returns its result using the gauss algorithm.
+        :param coefficients: nxm upper hessenberg matrix
+        :param independent_terms: mx1 vector
+        :return: mx1 X vector
+        """
+        a = copy.deepcopy(coefficients)
+        b = copy.deepcopy(independent_terms)
+        self.gauss_upper_hessenberg(a, b, calculator)
+        return self.exercise1(a, b)
+
+    def gauss_cubic_spline(self, a, b, calculator):
+        n = len(a)
+        for k in range(n):
+            div = a[k][k]
+            a[k][k] = calculator.division(a[k][k], div)
+            b[k] = calculator.division(b[k], div)
+            if k <= n-2:
+                i = k+1
+                a[k][i] = calculator.division(a[k][i], div)
+                mult = a[i][k]
+                a[i][k] = calculator.subtraction(a[i][k], calculator.multiplication(mult, a[k][k]))
+                if k <= n-3:
+                    a[i][k+1] = calculator.subtraction(a[i][k+1], calculator.multiplication(mult, a[k][k+1]))
+                b[i] = calculator.subtraction(b[i], calculator.multiplication(mult, b[k]))
+
+    def solve_cubic_spline_after_gauss(self, coefficients, independent_terms, calculator):
+        length = len(coefficients)
+        n = length - 1
+        result = [0] * length
+        result[n] = independent_terms[n]
+        for i in range(n-1, -1, -1):
+            product = 0
+            for j in range(i+1, min(i+3, length)):
+                product = calculator.sum(product, calculator.multiplication(coefficients[i][j], result[j]))
+            result[i] = calculator.sum(result[i], calculator.subtraction(independent_terms[i], product))
+        return result
 
     # Returns double[]. coefficients is of type double[][]. independentTerms is of type double[].
     def exercise7(self, coefficients, independent_terms, calculator):
-        return
+        """
+        Takes an equation system formed by a nxm cubic spline coefficient matrix and an mx1 vector 
+        with independent terms. Returns its result using the gauss algorithm.
+        :param coefficients: nxm upper hessenberg matrix
+        :param independent_terms: mx1 vector
+        :return: mx1 X vector
+        """
+        a = copy.deepcopy(coefficients)
+        b = copy.deepcopy(independent_terms)
+        self.gauss_cubic_spline(a, b, calculator)
+        return self.solve_cubic_spline_after_gauss(a, b)
 
     # Returns double[][]. coefficients is of type double[][].
     def exercise8(self, coefficients):
