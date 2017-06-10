@@ -110,7 +110,36 @@ class TP4:
                 inverse[i].append(coefficients[i][j])
         return inverse
 
+    def lu_decomposition(self, A):
+        """Performs an LU Decomposition of a matrix (which must be square)                                                                                                                                                                                        
+        into coefficients = LU. The function returns L and U."""
+        n = len(A)
+
+        # Create zero matrices for L and U
+        L = [[0.0] * n for i in range(n)]
+        U = [[0.0] * n for i in range(n)]
+
+        # Perform the LU Decomposition
+        for j in range(n):
+            # All diagonal entries of L are set to 1, because is Doolitle algorithm
+            L[j][j] = 1.0
+
+            # LaTeX: u_{ij} = a_{ij} - \sum_{k=1}^{i-1} u_{kj} l_{ik}
+            for i in range(j + 1):
+                s1 = sum(U[k][j] * L[i][k] for k in range(i))
+                U[i][j] = A[i][j] - s1
+
+            # LaTeX: l_{ij} = \frac{1}{u_{jj}} (a_{ij} - \sum_{k=1}^{j-1} u_{kj} l_{ik} )
+            for i in range(j, n):
+                s2 = sum(U[k][j] * L[i][k] for k in range(j))
+                L[i][j] = (A[i][j] - s2) / U[j][j]
+
+        return L, U
+
     # Returns double[]. coefficients is of type double[][]. independentTerms is of type double[]. 
     def exercise9(self, coefficients, independent_terms):
-        # Implement algorithm
+        # implement
         return
+
+
+
