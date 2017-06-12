@@ -1,6 +1,5 @@
 import copy
-
-
+from cmath import e
 class TP4:
     """
     Contains algorithms to solve Exercise 1,2,5,6,7,8,9 from tp7
@@ -8,6 +7,7 @@ class TP4:
 
     # Returns double[]. coefficients is of type double[][]. independentTerms is of type double[].
     def exercise1(self, coefficients, independent_terms):
+        """calculates unitary Ux=b"""
         length = len(coefficients)
         n = length - 1
         result = [0] * length
@@ -21,6 +21,7 @@ class TP4:
 
     # Returns double[]. coefficients is of type double[][]. independentTerms is of type double[].
     def exercise2(self, coefficients, independent_terms):
+        """calculates Lx=b"""
         length = len(coefficients)
         n = length - 1
         result = [0] * length
@@ -29,7 +30,7 @@ class TP4:
             product = 0
             for j in range(0, i):
                 product += coefficients[i][j] * result[j]
-            result[i] += (independent_terms[i] - product)/coefficients[i][i]
+            result[i] += (independent_terms[i] - product) / coefficients[i][i]
         return result
 
     def gauss_system(self, a, b, pivot=None):
@@ -185,36 +186,61 @@ class TP4:
                 inverse[i].append(coefficients[i][j])
         return inverse
 
-    def lu_decomposition(self, A):
+    def doolitle_decomposition(self, A, L, U):
         """Performs an LU Decomposition of a matrix (which must be square)                                                                                                                                                                                        
         into coefficients = LU. The function returns L and U."""
         n = len(A)
 
         # Create zero matrices for L and U
-        L = [[0.0] * n for i in range(n)]
-        U = [[0.0] * n for i in range(n)]
+        for i in range(n):
+            for j in range(n):
+                L[i][j] = 0
+                U[i][j] = 0
 
-        # Perform the LU Decomposition
+        # LU doolitle Decomposition
         for j in range(n):
             # All diagonal entries of L are set to 1, because is Doolitle algorithm
             L[j][j] = 1.0
 
-            # LaTeX: u_{ij} = a_{ij} - \sum_{k=1}^{i-1} u_{kj} l_{ik}
             for i in range(j + 1):
                 s1 = sum(U[k][j] * L[i][k] for k in range(i))
                 U[i][j] = A[i][j] - s1
 
-            # LaTeX: l_{ij} = \frac{1}{u_{jj}} (a_{ij} - \sum_{k=1}^{j-1} u_{kj} l_{ik} )
             for i in range(j, n):
                 s2 = sum(U[k][j] * L[i][k] for k in range(j))
                 L[i][j] = (A[i][j] - s2) / U[j][j]
 
-        return L, U
+    def crout_decomposition(self, A, L, U):
+        n = len(A)
+
+        # Create zero matrices for L and U
+        for i in range(n):
+            for j in range(n):
+                L[i][j] = 0
+                U[i][j] = 0
+
+        # LU crout Decomposition
+        for j in range(n):
+            U[j][j] = 1  # set the j,j-th entry of U to 1
+            for i in range(j, n):  # starting at L[j][j], solve j-th column of L
+                alpha = float(A[i][j])
+                for k in range(j):
+                    alpha -= L[i][k] * U[k][j]
+                L[i][j] = alpha
+            for i in range(j + 1, n):  # starting at U[j][j+1], solve j-th row of U
+                tempU = float(A[j][i])
+                for k in range(j):
+                    tempU -= L[j][k] * U[k][i]
+                if int(L[j][j]) == 0:
+                    L[j][j] = e - 40
+                U[j][i] = tempU / L[j][j]
 
     # Returns double[]. coefficients is of type double[][]. independentTerms is of type double[]. 
-    def exercise9(self, coefficients, independent_terms):
-        # implement
-        return
+    def exercise9(self, A, independent_terms, L, U):
+        self.crout_decomposition(A, L, U)
+        z = self.exercise2(L, independent_terms)
+        x = self.exercise1(U, z)
+        return x
 
 
 
