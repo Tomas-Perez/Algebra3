@@ -15,7 +15,7 @@ class TP9Test(unittest.TestCase):
         U = [[0, 0],
              [0, 0]]
 
-        self.tp4.doolitle_decomposition(A, L, U)
+        doolittle_decomposition(A, L, U)
 
         print("Doolitle:")
         print("L:")
@@ -24,7 +24,7 @@ class TP9Test(unittest.TestCase):
         print("U:")
         print(U)
 
-        self.tp4.crout_decomposition(A, L, U)
+        crout_decomposition(A, L, U)
 
         print("Crout:")
         print("L:")
@@ -34,7 +34,7 @@ class TP9Test(unittest.TestCase):
         print(U)
 
         # now the whole testing
-        x_from_exc9 = self.tp4.exercise9(A, result, L, U)
+        x_from_exc9 = self.tp4.exercise9(A, result)
         self.assertEqual(x_from_exc9, vector)
 
 

@@ -18,7 +18,7 @@ class TP4Test(unittest.TestCase):
                  [0, 1, 2],
                  [0, 0, 1]]
         exp_b = [1, 0.25, 0.25]
-        self.tp4.gauss_system(a, b)
+        gauss_system(a, b)
         self.assertEqual(a, exp_a)
         self.assertEqual(b, exp_b)
 
@@ -30,7 +30,7 @@ class TP4Test(unittest.TestCase):
                  [0, 1, 2],
                  [0, 0, 1]]
         exp_b = [2/3, 1/4, 1/4]
-        self.tp4.gauss_system(a, b, self.tp4.partial_pivot)
+        gauss_system(a, b, partial_pivot)
         for i in range(len(a)):
             self.assertAlmostEqual(b[i], exp_b[i])
             for j in range(len(a)):
@@ -70,7 +70,7 @@ class TP4Test(unittest.TestCase):
                  [0, 1, 2],
                  [0, 0, 1]]
         exp_b = [1, 1/4, 7/4]
-        self.tp4.gauss_upper_hessenberg(a, b, self.calc)
+        gauss_upper_hessenberg(a, b, self.calc)
         self.assertEqual(a, exp_a)
         self.assertEqual(b, exp_b)
 
